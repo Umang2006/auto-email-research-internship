@@ -1,7 +1,7 @@
 name: Daily Email Automation
 on:
   schedule:
-    - cron: '40 2 * * *' # 8:10 AM IST (2:40 AM UTC)
+    - cron: '40 2 * * *' # Runs daily at 8:10 AM IST
 
 jobs:
   run-script:
@@ -16,7 +16,7 @@ jobs:
           python-version: '3.9'
 
       - name: Install Dependencies
-        run: pip install openai requests smtplib google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
-
+        run: pip install openai requests google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+          
       - name: Run Script
         run: python auto_email.py
