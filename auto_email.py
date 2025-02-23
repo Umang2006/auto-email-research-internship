@@ -16,7 +16,7 @@ from google.oauth2 import service_account
 GMAIL_CREDENTIALS = "credentials.json"
 
 # ---- Load OpenAI API Key ----
-openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # ---- Read CV and Extract Skills & Interests ----
 def extract_text_from_cv(cv_path):
