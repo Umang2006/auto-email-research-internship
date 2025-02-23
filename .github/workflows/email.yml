@@ -1,13 +1,15 @@
 name: Daily Email Automation
+
 on:
   schedule:
-    - cron: '40 2 * * *' # Runs daily at 8:10 AM IST
+    - cron: '40 2 * * *' # Runs daily at 8:10 AM IST (IST = UTC +5:30)
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repo
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
       - name: Setup Python
@@ -16,7 +18,7 @@ jobs:
           python-version: '3.9'
 
       - name: Install Dependencies
-        run: pip install openai requests google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
-          
+        run: pip install -r requirements.txt
+
       - name: Run Script
         run: python auto_email.py
