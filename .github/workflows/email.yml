@@ -16,8 +16,8 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install Dependencies
-        run: pip install openai requests smtplib google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
       - name: Run Script
         env:
